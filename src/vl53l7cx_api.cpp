@@ -835,10 +835,7 @@ uint8_t VL53L7CX::vl53l7cx_get_resolution(uint8_t *p_resolution)
   status |= vl53l7cx_dci_read_data(p_dev->temp_buffer,
                                    VL53L7CX_DCI_ZONE_CONFIG, 8);
   *p_resolution = p_dev->temp_buffer[0x00] * p_dev->temp_buffer[0x01];
-  //Serial.print('00:');
-  Serial.print(p_dev->temp_buffer[0x01]);
-  //Serial.print(' 01:');
-  //Serial.println( p_dev->temp_buffer[0x01]);
+
   return status;
 }
 
@@ -1068,44 +1065,6 @@ uint8_t VL53L7CX::vl53l7cx_set_ranging_mode(uint8_t ranging_mode)
 
   return status;
 }
-/*
-uint8_t VL53L7CX::vl53l7cx_enable_internal_cp(
-  )
-{
-  uint8_t status = VL53L7CX_STATUS_OK;
-  uint8_t vcsel_bootup_fsm = 1;
-  uint8_t analog_dynamic_pad_0 = 0;
-
-  status |= vl53l7cx_dci_replace_data(p_dev->temp_buffer,
-      VL53L7CX_DCI_INTERNAL_CP, 16,
-      (uint8_t*)&vcsel_bootup_fsm, 1, 0x0A);
-
-  status |= vl53l7cx_dci_replace_data(p_dev->temp_buffer,
-      VL53L7CX_DCI_INTERNAL_CP, 16,
-      (uint8_t*)&analog_dynamic_pad_0, 1, 0x0E);
-
-  return status;
-}
-
-
-uint8_t VL53L7CX::vl53l7cx_disable_internal_cp(
-  )
-{
-  uint8_t status = VL53L7CX_STATUS_OK;
-  uint8_t vcsel_bootup_fsm = 0;
-  uint8_t analog_dynamic_pad_0 = 1;
-
-  status |= vl53l7cx_dci_replace_data(p_dev->temp_buffer,
-      VL53L7CX_DCI_INTERNAL_CP, 16,
-      (uint8_t*)&vcsel_bootup_fsm, 1, 0x0A);
-
-  status |= vl53l7cx_dci_replace_data(p_dev->temp_buffer,
-      VL53L7CX_DCI_INTERNAL_CP, 16,
-      (uint8_t*)&analog_dynamic_pad_0, 1, 0x0E);
-
-  return status;
-}
-*/
 
 uint8_t VL53L7CX::vl53l7cx_dci_read_data(
   uint8_t       *data,
