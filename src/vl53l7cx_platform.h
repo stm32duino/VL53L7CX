@@ -35,15 +35,15 @@
  ******************************************************************************
  */
 
-#ifndef _PLATFORM_H_
-#define _PLATFORM_H_
+#ifndef _VL53L7_PLATFORM_H_
+#define _VL53L7_PLATFORM_H_
 #pragma once
 
 #include <stdint.h>
 #include <string.h>
 #include <Arduino.h>
 #include <Wire.h>
-#include "platform_config.h"
+#include "vl53l7cx_platform_config.h"
 
 
 #ifndef DEFAULT_I2C_BUFFER_LEN
@@ -78,4 +78,4 @@ typedef struct {
 
 } VL53L7CX_Platform;
 
-#endif  // _PLATFORM_H_
+#endif  // _VL53L7_PLATFORM_H_

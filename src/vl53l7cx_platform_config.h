@@ -1,10 +1,10 @@
 /**
  ******************************************************************************
- * @file    platform_config_default.h
+ * @file    platform_config.h
  * @author  STMicroelectronics
  * @version V1.0.0
  * @date    11 November 2021
- * @brief   Header file with the default platform settings.
+ * @brief   Header file for the platform settings.
  ******************************************************************************
  * @attention
  *
@@ -35,49 +35,13 @@
  ******************************************************************************
  */
 
-#ifndef _PLATFORM_CONFIG_DEFAULT_H_
-#define _PLATFORM_CONFIG_DEFAULT_H_
+#ifndef _VL53L7CX_PLATFORM_CONFIG_H_
+#define _VL53L7CX_PLATFORM_CONFIG_H_
 
-/*
- * @brief If you want to customize these defines you can add in the application
- * code the file platform_config_custom.h file where you can override some of
- * these defines.
- */
-
-/*
- * @brief The macro below is used to define the number of target per zone sent
- * through I2C. This value can be changed by user, in order to tune I2C
- * transaction, and also the total memory size (a lower number of target per
- * zone means a lower RAM). The value must be between 1 and 4.
- */
-
-#ifndef VL53L7CX_NB_TARGET_PER_ZONE
-  #define   VL53L7CX_NB_TARGET_PER_ZONE   1U
+#if __has_include("vl53l7cx_platform_config_custom.h")
+  #include "vl53l7cx_platform_config_custom.h"
+#else
+  #include "vl53l7cx_platform_config_default.h"
 #endif
 
-/*
- * @brief The macro below can be used to avoid data conversion into the driver.
- * By default there is a conversion between firmware and user data. Using this macro
- * allows to use the firmware format instead of user format. The firmware format allows
- * an increased precision.
- */
-
-// #define  VL53L7CX_USE_RAW_FORMAT
-
-/*
- * @brief All macro below are used to configure the sensor output. User can
- * define some macros if he wants to disable selected output, in order to reduce
- * I2C access.
- */
-
-// #define VL53L7CX_DISABLE_AMBIENT_PER_SPAD
-// #define VL53L7CX_DISABLE_NB_SPADS_ENABLED
-// #define VL53L7CX_DISABLE_NB_TARGET_DETECTED
-// #define VL53L7CX_DISABLE_SIGNAL_PER_SPAD
-// #define VL53L7CX_DISABLE_RANGE_SIGMA_MM
-// #define VL53L7CX_DISABLE_DISTANCE_MM
-// #define VL53L7CX_DISABLE_REFLECTANCE_PERCENT
-// #define VL53L7CX_DISABLE_TARGET_STATUS
-// #define VL53L7CX_DISABLE_MOTION_INDICATOR
-
-#endif  // _PLATFORM_CONFIG_DEFAULT_H_
+#endif  // _VL53L7CX_PLATFORM_CONFIG_H_

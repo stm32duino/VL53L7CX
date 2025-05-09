@@ -40,7 +40,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "Arduino.h"
-#include "platform.h"
+#include "vl53l7cx_platform.h"
 #include "vl53l7cx_api.h"
 #include "vl53l7cx_plugin_detection_thresholds.h"
 #include "vl53l7cx_plugin_motion_indicator.h"
