@@ -1,6 +1,6 @@
 /**
  ******************************************************************************
- * @file    platform_config.h
+ * @file    vl53l7cx_platform_config.h
  * @author  STMicroelectronics
  * @version V1.0.0
  * @date    11 November 2021
