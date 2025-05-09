@@ -44,7 +44,7 @@
 
 
 
-#include "platform.h"
+#include "vl53l7cx_platform.h"
 
 /**
  * @brief Current driver version.
@@ -378,7 +378,8 @@ typedef struct {
 
 } VL53L7CX_ResultsData;
 
-
+#ifndef BLOCK_HEADER
+#define BLOCK_HEADER
 union Block_header {
   uint32_t bytes;
   struct {
@@ -387,5 +388,6 @@ union Block_header {
     uint32_t idx : 16;
   };
 };
+#endif
 
 #endif //VL53L7CX_API_H_

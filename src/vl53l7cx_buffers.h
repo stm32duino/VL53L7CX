@@ -39,7 +39,7 @@
 #ifndef VL53L7CX_BUFFERS_H_
 #define VL53L7CX_BUFFERS_H_
 
-#include "platform.h"
+#include "vl53l7cx_platform.h"
 
 /**
  * @brief Inner internal number of targets.
