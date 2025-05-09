@@ -35,8 +35,8 @@
  ******************************************************************************
  */
 
-#ifndef _VL53L7_PLATFORM_H_
-#define _VL53L7_PLATFORM_H_
+#ifndef _VL53L7CX_PLATFORM_H_
+#define _VL53L7CX_PLATFORM_H_
 #pragma once
 
 #include <stdint.h>
@@ -78,4 +78,4 @@ typedef struct {
 
 } VL53L7CX_Platform;
 
-#endif  // _VL53L7_PLATFORM_H_
+#endif  // _VL53L7CX_PLATFORM_H_
