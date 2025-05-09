@@ -1,6 +1,6 @@
 /**
  ******************************************************************************
- * @file    platform.cpp
+ * @file    vl53l7cx_platform.cpp
  * @author  STMicroelectronics
  * @version V1.0.0
  * @date    11 November 2021
